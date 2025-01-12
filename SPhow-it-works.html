@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f8fa;
+            color: #333;
+        }
+
+        .how-it-works-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-home {
+            display: inline-block;
+            background: #1da1f2;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .back-to-home:hover {
+            background: #0d95e8;
+        }
+
+        .how-it-works-header {
+            margin-bottom: 20px;
+        }
+
+        .how-it-works-header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #000000;
+        }
+
+        .faq-section {
+            margin-top: 20px;
+        }
+
+        .faq-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .accordion {
+            margin-bottom: 10px;
+        }
+
+        .accordion button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .accordion button:hover,
+        .accordion button:focus {
+            background: #0056b3;
+        }
+
+        .panel {
+            padding: 0 10px;
+            background: white;
+            display: none;
+            overflow: hidden;
+            border-radius: 0 0 5px 5px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .panel p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="/">Cavite Services Hub</a></h1>
+            </div>
+
+            <!-- Menu Bar with Dropdown -->
+            <div class="menu-bar">
+                <nav>
+                    <ul>
+                        <li>
+                            <p class="status">Service Provider Mode</p>
+                        </li>
+                        <li><a href="SP.html"> Settings</a>
+
+                            <div class="dropdown-content">
+                                <a href="SPprofile.html">Profile</a>
+                                <a href="SPmessages.html">Messages</a>
+                                <a href="index.html">Find Services</a>
+                                <a href="SPhow-it-works.html">How It Works</a>
+                                <a href="SPabout-us.html">About Us</a>
+                                <a href="login.html">Log out</a>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="how-it-works-container">
+        <a href="index.html" class="back-to-home"><</a>
+        <div class="how-it-works-header">
+            <h1>How It Works</h1>
+        </div>
+         
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <!-- Accordion for How to Use the Platform -->
+            <div class="accordion">
+                <button class="accordion-button">How do I create an account?</button>
+                <div class="panel">
+                    <p>To create an account, click on the 'Sign Up' button on the homepage. Fill in the required information including your name, email address, and password. Once submitted, you'll receive a confirmation email. Click on the link in the email to verify your account.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button">How do I post a service request?</button>
+                <div class="panel">
+                    <p>To post a service request, log in to your account and click on the 'Add Post' button. Provide the necessary details about the service you need, such as the type of service, description, and any other relevant information. Once done, click 'Submit' to post your request.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button">How do I bookmark a post?</button>
+                <div class="panel">
+                    <p>To bookmark a post, click on the 'Bookmark' button found on the service post you are interested in. The post will then be saved to your bookmarked list, which you can access from your profile.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button">How do I contact a service provider?</button>
+                <div class="panel">
+                    <p>To contact a service provider, go to their profile page and click on the 'Send Message' button. You can then send them a message with your inquiry or request. Alternatively, you can contact them through the details provided on their post.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button">How do I edit my profile?</button>
+                <div class="panel">
+                    <p>To edit your profile, log in to your account and go to your profile page. Click on the 'Edit Profile' button, make the necessary changes, and then click 'Save' to update your profile information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion-button");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

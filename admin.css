@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f8fa;
+    color: #333;
+}
+
+.header-container {
+    background: #333;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container h1 {
+    margin: 0;
+}
+
+.header-container nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header-container nav ul li {
+    margin-right: 15px;
+}
+
+.header-container nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.header-container nav ul li a:hover {
+    background: #0d95e8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.post, .user, .verification, .analytics-item {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e8ed;
+    position: relative;
+}
+
+.post h3, .user h3, .verification h3, .analytics-item h3 {
+    margin: 0 0 5px;
+}
+
+.post p, .user p, .verification p, .analytics-item p {
+    margin: 0 0 10px;
+}
+
+.post-actions, .user-actions, .verification-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.post-actions button, .user-actions button, .verification-actions button {
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.edit-button {
+    background-color: #28a745;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.approve-button {
+    background-color: #007bff;
+}
+
+.deny-button {
+    background-color: #e64732;
+}
+
+button:hover {
+    background: #0d95e8;
+}

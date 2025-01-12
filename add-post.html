@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Post - Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-container label {
+            font-size: 18px;
+            color: #444;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-container input, .form-container textarea, .form-container select {
+            padding: 16px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        .form-container input:focus, .form-container textarea:focus, .form-container select:focus {
+            border-color: #007bff;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-container textarea {
+            resize: vertical;
+            min-height: 150px;
+            max-height: 300px;
+        }
+
+        /* Larger input box */
+        .form-container input {
+            min-height: 50px; /* Making input box bigger */
+        }
+
+        .form-container button {
+            padding: 14px 24px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .postedna{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Small Device Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .form-container label {
+                font-size: 16px;
+            }
+
+            .form-container input, .form-container textarea, .form-container select {
+                font-size: 14px;
+            }
+
+            .form-container button {
+                font-size: 16px;
+            }
+
+            .back-btn {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add Post</h1>
+
+        <form action="/submit-post" method="POST" class="form-container">
+            <!-- Service Input Text -->
+            <div>
+                <label for="serviceType">What are you looking for?</label>
+                
+            </div>
+            <input type="text" id="serviceType" name="serviceType" placeholder="What are you looking for?" required>
+
+            <!-- Problem Description Form -->
+            <div>
+                <label for="problemDescription">Describe your problem or requirement</label>
+                
+            </div>
+            <textarea id="problemDescription" name="problemDescription" placeholder="Explain the service you need" required></textarea>
+            <!-- Submit Button -->
+            <button type="submit"> <a href="index.html"  claonclick="alert('You Added a Post!')" class="postedna">Post Service Request</a></button>
+        </form>
+
+        <!-- Back Button -->
+        <a href="/" class="back-btn">Back to Home</a>
+    </div>
+
+</body>
+</html>

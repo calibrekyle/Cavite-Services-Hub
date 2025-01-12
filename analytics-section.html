@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Cavite Services Hub</title>
+    <link rel="stylesheet" href="admin.css">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .analytics-container {
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+
+        /* Analytics Section */
+        .analytics-section {
+            margin-top: 20px;
+        }
+
+        .analytics-item {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .analytics-item h3 {
+            font-size: 22px;
+            color: #333;
+        }
+
+        .analytics-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Graph Section */
+        .chart-container {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin-top: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div class="analytics-container">
+        <!-- Header Section -->
+        <header>
+            <h1>Admin Dashboard - Analytics</h1>
+            <nav>
+                <ul>
+                    <li><a href="admin.html">Dashboard</a></li>
+                    <li><a href="userPosts.html">Manage Posts</a></li>
+                    <li><a href="users.html">Manage Users</a></li>
+                    <li><a href="verifications-section.html">Manage Verifications</a></li>
+                    <li><a href="analytics-section.html">Analytics</a></li>
+                    <li><a href="login.html">Log out</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Analytics Section -->
+        <section class="analytics-section">
+            <div class="analytics-item">
+                <h3>Total Users</h3>
+                <p>1234</p>
+            </div>
+            <div class="analytics-item">
+                <h3>Total Services</h3>
+                <p>567</p>
+            </div>
+            <div class="analytics-item">
+                <h3>Total Customer Posts</h3>
+                <p>456</p>
+            </div>
+            <div class="analytics-item">
+                <h3>Most Common Job Type</h3>
+                <p>Electrician</p>
+            </div>
+            <div class="analytics-item">
+                <h3>Top Barangay with Most Service Providers</h3>
+                <p>Barangay 1</p>
+            </div>
+        </section>
+
+        <!-- Graphs Section -->
+        <div class="chart-container">
+            <h1>Pie Chart of the most common job type</h1>
+            <canvas id="serviceTypeChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h1>Bar Chart of the service providers by Barangay</h1>
+            <canvas id="barangayChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sample Data for Graphs
+        const serviceTypeData = {
+            labels: ['Electrician', 'Plumber', 'Carpenter', 'Housekeeper', 'Driver'],
+            datasets: [{
+                label: 'Service Types Distribution',
+                data: [200, 150, 100, 50, 80],
+                backgroundColor: ['#ff6666', '#ffcc99', '#66b3ff', '#99ff99', '#ffb3e6'],
+                borderColor: ['#ff3333', '#ff9966', '#3399ff', '#66ff66', '#ff66cc'],
+                borderWidth: 1
+            }]
+        };
+
+        const barangayData = {
+            labels: ['Barangay 1', 'Barangay 2', 'Barangay 3', 'Barangay 4', 'Barangay 5'],
+            datasets: [{
+                label: 'Service Providers by Barangay',
+                data: [350, 150, 100, 80, 50],
+                backgroundColor: '#3399ff',
+                borderColor: '#0066cc',
+                borderWidth: 1
+            }]
+        };
+
+        // Create the Service Type Chart
+        const serviceTypeCtx = document.getElementById('serviceTypeChart').getContext('2d');
+        const serviceTypeChart = new Chart(serviceTypeCtx, {
+            type: 'pie',
+            data: serviceTypeData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + ' Providers';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Create the Barangay Chart
+        const barangayCtx = document.getElementById('barangayChart').getContext('2d');
+        const barangayChart = new Chart(barangayCtx, {
+            type: 'bar',
+            data: barangayData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + ' Providers';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General header styles */
+        
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="/">Cavite Services Hub</a></h1>
+            </div>
+
+            <!-- Menu Bar with Dropdown -->
+            <div class="menu-bar">
+                <nav>
+                    <ul>
+                        <li>
+                            <p class="status">Customer Mode</p>
+                        </li>
+                        <li><a href="#"> Settings</a>
+
+                            <div class="dropdown-content">
+                                <a href="profile.html">Profile</a>
+                                <a href="messages.html">Messages</a>
+                                <a href="serviceprovider.html">Sell Services</a>
+                                <a href="how-it-works.html">How It Works</a>
+                                <a href="about-us.html">About Us</a>
+                                <a href="login.html">Log out</a>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" placeholder="Search Services..." id="searchBar">
+        <button>Search</button>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="filters-container">
+        <!-- Checkboxes for Filtering -->
+        <div class="checkbox-container">
+            <label><input type="checkbox" name="filter" value="homeServices"> Bookmarked </label>
+            <label><input type="checkbox" name="filter" value="healthWellness"> Latest </label>
+        </div>
+
+        <!-- Price Range Slider -->
+        <div class="price-slider-container">
+            <label for="priceRange">Minimum Price: </label>
+            <input type="range" id="priceRange" name="priceRange" min="0" max="50000" value="25000" step="100">
+            <span id="priceRangeValue">₱25,000</span>
+        </div>
+    </div>
+
+    <!-- Categories Filter Section (Dropdown) -->
+    <div class="category-container">
+        <label for="serviceCategory">Job Type</label>
+        <select id="serviceCategory" name="categoryFilter">
+            <option value="">Select a Category</option>
+            <option value="plumbing">Home Services</option>
+            <option value="cleaning">Health and Wellness</option>
+            <option value="electrician">Beauty & Personal Care</option>
+            <option value="movers">Education & Tutoring</option>
+            <option value="gardening">Technology & IT Services</option>
+            <option value="gardening">Legal & Financial Services</option>
+            <option value="gardening">Arts & Crafts</option>
+            <option value="gardening">Pet Services</option>
+            <option value="gardening">Food & Beverage</option>
+            <option value="gardening">Child & Elderly Care</option>
+            <option value="gardening">Entertainment & Leisure</option>
+            <option value="gardening">Miscellaneous Services</option>
+        </select>
+
+        <label for="serviceCategory"> Barangay</label>
+        <select id="serviceCategory" name="categoryFilter">
+            <option value="">Select a Category</option>
+            <option value="plumbing">Any</option>
+            <option value="plumbing">Barangay 1</option>
+            <option value="cleaning">Barangay 2</option>
+            <option value="electrician">Barangay 3</option>
+            <option value="movers">Barangay 4</option>
+            <option value="gardening">Barangay 5</option>
+            <option value="gardening">Barangay 6</option>
+            <option value="gardening">Barangay 7</option>
+            <option value="gardening">Barangay 8</option>
+            <option value="gardening">Barangay 9</option>
+            <option value="gardening">Barangay 10</option>
+            <option value="gardening">Barangay 11</option>
+            <option value="gardening">Barangay 12</option>
+        </select>
+    </div>
+
+    <!-- Service Offerings Section -->
+    <div class="service-listing-container">
+        <a href="plumbing.html" class="service-item">
+            <p class="date-posted"> 1hr</p>
+            <h2 class="service-type">Plumbing Services</h2>
+            <p class="provider-name">Provider: Johny Sins</p>
+            <p class="barangay_niya">Barangay 7</p>
+            <p class="Rate"> Minimum Price: ₱300</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐⭐ (4.8)</p>
+        </a>
+    
+        <a href="plumbing.html" class="service-item">
+            <p class="date-posted">7hr</p>
+            <h2 class="service-type">Web Developer</h2>
+            <p class="provider-name">Provider: Kenjee Angue</p>
+            <p class="barangay_niya">Barangay 7</p>
+            <p class="Rate"> Minimum Price: ₱300</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐ (4.5)</p>
+        </a>
+    
+        <a href="plumbing.html" class="service-item">
+            <p class="date-posted">9hr</p>
+            <h2 class="service-type">Electrician Services</h2>
+            <p class="provider-name">Provider: Mark Lee</p>
+            <p class="barangay_niya">Barangay 7</p>
+            <p class="Rate"> Minimum Price: ₱300</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐⭐ (4.9)</p>
+        </a>
+    </div>
+
+    <div class="service-listing-container">
+        <a href="plumbing.html" class="service-item">
+            <p class="date-posted">18hr</p>
+            <h2 class="service-type">Beauty Expert</h2>
+            <p class="provider-name">Provider: John Doe</p>
+            <p class="barangay_niya">Barangay 7</p>
+            <p class="Rate"> AMinimum Price: ₱300</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐⭐ (4.8)</p>
+        </a>
+    
+        <a href="plumbing.html" class="service-item">
+            <p class="date-posted">19hr</p>
+            <h2 class="service-type">Haircut</h2>
+            <p class="provider-name">Provider: Jane Smith</p>
+            <p class="barangay_niya">Barangay 7</p>
+            <p class="Rate"> Minimum Price: ₱300</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐ (4.5)</p>
+        </a>
+    
+        <a href="plumbing.html" class="service-item">
+            <p class="date-posted">January 5, 2025</p>
+            <h2 class="service-type">Catering Services</h2>
+            <p class="provider-name">Provider: Mark Lee</p>
+            <p class="barangay_niya">Barangay 7</p>
+            <p class="Rate"> Minimum Price: ₱300</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐⭐ (4.9)</p>
+        </a>
+    </div>
+
+    <div class="service-listing-container">
+        <a href="plumbing.html" class="service-item">
+            <p class="date-posted">January 5, 2025</p>
+            <h2 class="service-type">Tutoring</h2>
+            <p class="provider-name">Provider: John Doe</p>
+            <p class="barangay_niya">Barangay 7</p>
+            <p class="Rate"> Minimum Price: ₱300</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐⭐ (4.8)</p>
+        </a>
+    
+        <a href="plumbing.html" class="service-item">
+            <p class="date-posted">January 5, 2025</p>
+            <h2 class="service-type">Labandera</h2>
+            <p class="provider-name">Provider: Aling Nena</p>
+            <p class="barangay_niya">Barangay 7</p>
+            <p class="Rate"> Minimum Price: ₱300</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐ (4.5)</p>
+        </a>
+    
+        <a href="plumbing.html" class="service-item">
+            <p class="date-posted">January 3, 2025</p>
+            <h2 class="service-type">Graphic Designer</h2>
+            <p class="provider-name">Provider: Mark Lee</p>
+            <p class="barangay_niya">Barangay 7</p>
+            <p class="Rate"> Minimum Price: ₱300</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐⭐ (4.9)</p>
+        </a>
+    </div>
+
+    <a href="add-post.html" class="add-post-btn">+ Add Post</a>
+
+    <script>
+        function toggleInfo(element) {
+            element.classList.toggle('active');
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Update price range value display
+        const priceRange = document.getElementById('priceRange');
+        const priceRangeValue = document.getElementById('priceRangeValue');
+
+        priceRange.addEventListener('input', function() {
+            priceRangeValue.textContent = `₱${this.value}`;
+        });
+    </script>
+</body>
+</html>

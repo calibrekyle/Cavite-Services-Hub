@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General header styles */
+        
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="SP.html">Cavite Services Hub </a></h1>
+            </div>
+
+            <!-- Menu Bar with Dropdown -->
+            <div class="menu-bar">
+                <nav>
+                    
+                    <ul>
+                        <li>
+                            <p class="status">Service Provider Mode</p>
+                        </li>
+                        
+                        <li><a href="#"> Settings</a>
+
+
+                            <div class="dropdown-content">
+                                <a href="SPprofile.html">Profile</a>
+                                <a href="SPmessages.html">Messages</a>
+                                <a href="index.html">Find Services</a>
+                                <a href="SPhow-it-works.html">How It Works</a>
+                                <a href="SPabout-us.html">About Us</a>
+                                <a href="login.html">Log out</a>
+                            </div>
+                            
+                        </li>
+
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" placeholder="Search Services..." id="searchBar">
+        <button>Search</button>
+    </div>
+
+    
+
+    <!-- Service Offerings Section -->
+    <h1>Customers' Posts</h1>
+    <div class="service-listing-container">
+        
+        <a href="SPplumbing.html" class="service-item">
+            <h2 class="service-type">Looking for Graphic Designer</h2>
+            <p class="provider-name">Customer: Johny Sins</p>
+            <p>Barangay 2</p>
+        </a>
+    
+        <a href="SPplumbing.html" class="service-item">
+            <h2 class="service-type">Sino po may catering service diyan?</h2>
+            <p class="provider-name">Customer: Kenjee Angue</p>
+            <p>Barangay 7</p>
+            
+        </a>
+    
+        <a href="SPplumbing.html" class="service-item">
+            <h2 class="service-type">Looking for Graphic Designer</h2>
+            <p class="provider-name">Customer: Mark Lee</p>
+            <p>Barangay 9</p>
+          
+        </a>
+    </div>
+
+    <div class="service-listing-container">
+        <a href="SPplumbing.html" class="service-item">
+            <h2 class="service-type">Baka po may marunong mag ayos ng bangka diyan</h2>
+            <p class="provider-name">Customer: John Doe</p>
+            <p>Barangay 5</p>
+            
+        </a>
+    
+        <a href="SPplumbing.html" class="service-item">
+            <h2 class="service-type">lf kasambahay libre pagkain</h2>
+            <p class="provider-name">Customer: Jane Smith</p>
+            <p>Barangay 2</p>
+           
+        </a>
+    
+        <a href="SPplumbing.html" class="service-item">
+            <h2 class="service-type">lf tutor ng anak ko </h2>
+            <p class="provider-name">Customer: Mark Lee</p>
+            <p>Barangay 2</p>
+            
+        </a>
+    </div>
+
+    <div class="service-listing-container">
+        <a href="SPplumbing.html" class="service-item">
+            <h2 class="service-type">patulong po gumawa ng system</h2>
+            <p class="provider-name">Customer: John Doe</p>
+            <p>Barangay 7</p>
+           
+        </a>
+    
+        <a href="SPplumbing.html" class="service-item">
+            <h2 class="service-type">Labandera</h2>
+            <p class="provider-name">Customer: Aling Nena</p>
+            <p>Barangay 1</p>
+            
+        </a>
+    
+        <a href="SPplumbing.html" class="service-item">
+            <h2 class="service-type">Graphic Designer</h2>
+            <p class="provider-name">Customer: Mark Lee</p>
+            <p>Barangay 4</p>
+            
+        </a>
+    </div>
+
+    <a href="add-list.html" class="add-post-btn"> + List a Service Offer</a>
+
+    <script>
+        function toggleInfo(element) {
+            element.classList.toggle('active');
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Update price range value display
+        const priceRange = document.getElementById('priceRange');
+        const priceRangeValue = document.getElementById('priceRangeValue');
+
+        priceRange.addEventListener('input', function() {
+            priceRangeValue.textContent = `₱${this.value}`;
+        });
+    </script>
+</body>
+</html>

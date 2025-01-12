@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Listing - Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-container label {
+            font-size: 18px;
+            color: #444;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-container input, .form-container textarea, .form-container select {
+            padding: 16px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        .form-container input:focus, .form-container textarea:focus, .form-container select:focus {
+            border-color: #007bff;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-container textarea {
+            resize: vertical;
+            min-height: 150px;
+            max-height: 300px;
+        }
+
+        /* Larger input box */
+        .form-container input {
+            min-height: 50px; /* Making input box bigger */
+        }
+
+        .form-container button {
+            padding: 14px 24px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #218838;
+        }
+
+        .nalistna{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Small Device Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .form-container label {
+                font-size: 16px;
+            }
+
+            .form-container input, .form-container textarea, .form-container select {
+                font-size: 14px;
+            }
+
+            .form-container button {
+                font-size: 16px;
+            }
+
+            .back-btn {
+                font-size: 14px;
+            }
+        }
+
+        /* Custom Styles for Image Upload */
+        .image-upload {
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .image-upload input[type="file"] {
+            font-size: 16px;
+        }
+
+        .image-preview {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .image-preview img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add Service Listing</h1>
+
+        <form action="/submit-listing" method="POST" class="form-container" enctype="multipart/form-data">
+            <!-- Job Type Selection -->
+            <div>
+                <label for="jobType">Select Job Type</label>
+                <select id="jobType" name="jobType" required>
+                    <option value="">Select a Category</option>
+                    <option value="plumbing">Home Services</option>
+                    <option value="cleaning">Health and Wellness</option>
+                    <option value="electrician">Beauty & Personal Care</option>
+                    <option value="movers">Education & Tutoring</option>
+                    <option value="gardening">Technology & IT Services</option>
+                    <option value="gardening">Legal & Financial Services</option>
+                    <option value="gardening">Arts & Crafts</option>
+                    <option value="gardening">Pet Services</option>
+                    <option value="gardening">Food & Beverage</option>
+                    <option value="gardening">Child & Elderly Care</option>
+                    <option value="gardening">Entertainment & Leisure</option>
+                    <option value="gardening">Miscellaneous Services</option>
+                </select>
+            </div>
+
+            <!-- Service Description -->
+            <div>
+                <label for="serviceType">Service Title</label>
+                
+            </div>
+            <input type="text" id="serviceType" name="serviceType" placeholder="What specific service do you offer?" required>
+
+            <div>
+                <label for="serviceDescription">Describe the Service</label>
+                
+            </div>
+            <textarea id="serviceDescription" name="serviceDescription" placeholder="Describe the service you're offering" required></textarea>
+            
+            
+
+            <!-- Image Upload -->
+            <div class="image-upload">
+                <label for="serviceImages">Upload Photos (Optional)</label>
+                <input type="file" id="serviceImages" name="serviceImages[]" accept="image/*" multiple>
+            </div>
+
+            <!-- Image Preview -->
+            <div class="image-preview" id="imagePreview"></div>
+
+            <!-- Submit Button -->
+            <button type="submit" onclick="alert('Your service offer is now added to the list of services available.')" > <a href="SP.html" class="nalistna">Submit Listing</a></button>
+        </form>
+
+        <!-- Back Button -->
+        <a href="SP.html" class="back-btn">Back to Home</a>
+    </div>
+
+    <script>
+        // Handle image preview
+        const imageInput = document.getElementById("serviceImages");
+        const imagePreview = document.getElementById("imagePreview");
+
+        imageInput.addEventListener("change", function() {
+            imagePreview.innerHTML = ""; // Clear previous previews
+            const files = imageInput.files;
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    imagePreview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
+
+</body>
+</html>

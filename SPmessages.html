@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox - Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Messenger-Inspired Inbox Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .inbox-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            height: 80vh;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-list {
+            width: 30%;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .chat-list-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .chat-list-item img {
+            border-radius: 50%;
+            margin-right: 10px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .chat-list-item .chat-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-list-item .chat-info .chat-name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .chat-list-item .chat-info .chat-snippet {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .chat-list-item:hover, .chat-list-item.active {
+            background-color: #f0f2f5;
+        }
+
+        .chat-widget {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .recipient-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .message-history {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #e4e6eb;
+            max-width: 60%;
+        }
+
+        .message.user {
+            background-color: #007bff;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .message .content {
+            margin: 0;
+        }
+
+        .message-input-container {
+            display: flex;
+            align-items: center;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .message-input-container input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        .message-input-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .message-input-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="SP.html">Cavite Services Hub</a></h1>
+            </div>
+
+            <!-- Menu Bar with Dropdown -->
+            <div class="menu-bar">
+                <nav>
+                    <ul>
+                        <li>
+                            <p class="status">Service Provider Mode</p>
+                        </li>
+                        
+                        <li><a href="#"> Settings</a>
+
+                            <div class="dropdown-content">
+                                <a href="SPprofile.html">Profile</a>
+                                <a href="SPmessages.html">Messages</a>
+                                <a href="index.html">Find Services</a>
+                                <a href="SPhow-it-works.html">How It Works</a>
+                                <a href="SPabout-us.html">About Us</a>
+                                <a href="login.html">Log out</a>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Inbox Section -->
+    <div class="inbox-container">
+        <!-- Chat List -->
+        <div class="chat-list" id="chatList">
+            <div class="chat-list-item active">
+                <img src="Pics/dio.jpg" alt="John Doe">
+                <div class="chat-info">
+                    <div class="chat-name">John Doe</div>
+                    <div class="chat-snippet">Hi there! How can I help...</div>
+                </div>
+            </div>
+            <div class="chat-list-item">
+                <img src="Pics/patrick.jpg" alt="Jane Smith">
+                <div class="chat-info">
+                    <div class="chat-name">Patrick Bautista</div>
+                    <div class="chat-snippet">Hi! may shawty ba diyan???</div>
+                </div>
+            </div>
+            <div class="chat-list-item">
+                <img src="Pics/patrick.jpg" alt="Mark Lee">
+                <div class="chat-info">
+                    <div class="chat-name">Mark Lee</div>
+                    <div class="chat-snippet">Pare....</div>
+                </div>
+            </div>
+            <!-- Add more chat list items here -->
+        </div>
+
+        <!-- Chat Widget -->
+        <div class="chat-widget">
+            <div class="recipient-name">John Doe</div>
+            
+            <div class="message-history" id="messageHistory">
+                <div class="message user">
+                    <p class="content">Hi, when are you available?</p>
+                </div>
+                <div class="message">
+                    <p class="content">Every monday to friday</p>
+                </div>
+                <!-- Add more messages here -->
+            </div>
+
+            <div class="message-input-container">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendMessageBtn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Example JavaScript to handle chat switching
+        document.querySelectorAll('.chat-list-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.chat-list-item').forEach(el => el.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelector('.recipient-name').innerText = this.querySelector('.chat-name').innerText;
+                // Load the chat history for the selected recipient
+                // This is where you'd implement the logic to load messages dynamically
+            });
+        });
+
+
+
+        
+        // Example JavaScript to handle message sending
+        document.getElementById('sendMessageBtn').addEventListener('click', function() {
+            var messageContent = document.getElementById('messageInput').value;
+            if (messageContent.trim() !== '') {
+                var newMessage = document.createElement('div');
+                newMessage.classList.add('message', 'user');
+                newMessage.innerHTML = '<p class="content">' + messageContent + '</p>';
+                document.getElementById('messageHistory').appendChild(newMessage);
+                document.getElementById('messageInput').value = '';
+                document.getElementById('messageHistory').scrollTop = document.getElementById('messageHistory').scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>

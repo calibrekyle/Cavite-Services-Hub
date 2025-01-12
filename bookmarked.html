@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarked Posts - Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f8fa;
+            color: #333;
+        }
+
+        .bookmarked-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-profile {
+            display: inline-block;
+            background: #1da1f2;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .back-to-profile:hover {
+            background: #0d95e8;
+        }
+
+        .bookmarked-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .bookmarked-header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #000000;
+        }
+
+        .posts-section {
+            margin-top: 20px;
+        }
+
+        .posts-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .post {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #e1e8ed;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .post:hover {
+            transform: scale(1.02);
+        }
+
+        .post:active {
+            transform: scale(1.05);
+        }
+
+        .post h3 {
+            font-size: 18px;
+            margin: 0 0 5px;
+        }
+
+        .post p {
+            font-size: 14px;
+            margin: 0;
+            color: #657786;
+        }
+
+        .post-time {
+            font-size: 12px;
+            color: #bbb;
+            margin-top: 5px;
+        }
+
+        .post-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .post-actions button {
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .post-actions .delete-button {
+            background-color: #e64732;
+        }
+
+        .post-actions button:hover {
+            background: #0d95e8;
+        }
+
+        .delete-button {
+            background: #dc3545;
+        }
+
+        .delete-button:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="/">Cavite Services Hub</a></h1>
+            </div>
+
+            <!-- Menu Bar with Dropdown -->
+            <div class="menu-bar">
+                <nav>
+                    <ul>
+                        
+                        <li><a href="#"> Settings</a>
+
+                            <div class="dropdown-content">
+                                <a href="profile.html">Profile</a>
+                                <a href="messages.html">Messages</a>
+                                <a href="serviceprovider.html">Sell Services</a>
+                                <a href="how-it-works.html">How It Works</a>
+                                <a href="about-us.html">About Us</a>
+                                <a href="login.html">Log out</a>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="bookmarked-container">
+        <a href="profile.html" class="back-to-profile">Back to Profile</a>
+        <div class="bookmarked-header">
+            <h1>Bookmarked Posts</h1>
+        </div>
+         
+        <div class="posts-section">
+            <h2>Your Bookmarked Posts:</h2>
+            <!-- Example Bookmarked Post -->
+            <div class="post">
+                <h3>Looking for Manghihilot</h3>
+                <p>Sobrang sakit po ng likod ko please pahilot</p>
+                <p class="post-time">Bookmarked on: January 11, 2025, 9:00 PM</p>
+                <div class="post-actions">
+                    <button class="delete-button">Remove Bookmark</button>
+                </div>
+            </div>
+            <div class="posts-section">
+    
+                <!-- Example Bookmarked Post -->
+                <div class="post">
+                    <h3>Looking for Manikyurista</h3>
+                    <p>May aakitin ako</p>
+                    <p class="post-time">Bookmarked on: January 11, 2025, 9:00 PM</p>
+                    <div class="post-actions">
+                        <button class="delete-button">Remove Bookmark</button>
+                    </div>
+                </div>
+                <div class="posts-section">
+            <!-- Example Bookmarked Post -->
+            <div class="post">
+                <h3>Looking for Nag-aayos ng Laptop</h3>
+                <p>ayaw mag open eh</p>
+                <p class="post-time">Bookmarked on: January 11, 2025, 9:00 PM</p>
+                <div class="post-actions">
+                    <button class="delete-button">Remove Bookmark</button>
+                </div>
+            </div>
+            <div class="posts-section">
+
+                <!-- Example Bookmarked Post -->
+                <div class="post">
+                    <h3>Looking for tubero</h3>
+                    <p>magpapatubo sa likod</p>
+                    <p class="post-time">Bookmarked on: January 11, 2025, 9:00 PM</p>
+                    <div class="post-actions">
+                        <button class="delete-button">Remove Bookmark</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

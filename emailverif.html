@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification - Cavite Services Hub</title>
+    <link rel="stylesheet" href="emailverif.css">
+</head>
+<body>
+    <div class="verification-container">
+        <div class="verification-header">
+            <h1>Email Verification</h1>
+            <p>We've sent a verification link to your email. Please check your inbox and click the link to verify your email address.</p>
+        </div>
+        <div class="verification-actions">
+            <button onclick="resendVerificationEmail()">Resend Verification Email</button>
+        </div>
+        <div class="switch-form">
+            <p>Already verified? <a href="login.html">Login here</a></p>
+        </div>
+    </div>
+
+    <script>
+        function resendVerificationEmail() {
+            // Mock function for resending the verification email
+            alert('A new verification email has been sent to your email address.');
+        }
+
+        // Function to check if the verification link has been clicked
+        function checkVerification() {
+            // Mock implementation of verification check
+            // In a real application, this would involve server-side verification
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('verified')) {
+                if (urlParams.get('verified') === 'true') {
+                    alert('Email successfully verified!');
+                    window.location.href = 'login.html';
+                } else {
+                    alert('Verification failed. Please try again.');
+                }
+            }
+        }
+
+        // Check verification status on page load
+        window.onload = checkVerification;
+    </script>
+</body>
+</html>

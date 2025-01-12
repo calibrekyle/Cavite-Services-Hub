@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-bar {
+    position: relative;
+}
+
+.menu-bar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-bar nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+}
+
+.menu-bar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+/* Dropdown menu styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.menu-bar nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search-container input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Service Listing Styles */
+.service-listing-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center; /* Center items horizontally */
+    align-content: center; /* Center items vertically if needed */
+    text-align: center; /* Center text within each item */
+}
+
+.service-listing-container a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s;
+    text-align: center; /* Center text within each link block */
+}
+
+.service-listing-container a:hover {
+    transform: scale(1.02);
+}
+
+
+
+.service-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.service-item:hover {
+    transform: scale(1.02);
+}
+
+.service-item h2 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.service-item .provider-name,
+.service-item .ratings {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.service-item .more-info {
+    display: none;
+    margin-top: 10px;
+}
+
+.service-item .more-info img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.service-item.active .more-info {
+    display: block;
+
+}
+
+.add-post-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.add-post-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+        
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="/">Cavite Services Hub</a></h1>
+            </div>
+
+            <!-- Menu Bar with Dropdown -->
+            <div class="menu-bar">
+                <nav>
+                    <ul>
+                        
+                        <li><a href="#"> Settings</a>
+
+                            <div class="dropdown-content">
+                                <a href="/">Profile</a>
+                                <a href="/">Messages</a>
+                                <a href="/plumbing.html">How It Works</a>
+                                <a href="/plumbing.html">About Us</a>
+                                <a href="/plumbing.html">Log out</a>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" placeholder="Search Services..." id="searchBar">
+        <button>Search</button>
+    </div>
+
+    <!-- Service Offerings Section -->
+    <div class="service-listing-container">
+        <a href="plumbing.html" class="service-item">
+            <h2 class="service-type">Plumbing Services</h2>
+            <p class="provider-name">Provider: John Doe</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐⭐ (4.8)</p>
+        </a>
+    
+        <a href="plumbing.html" class="service-item">
+            <h2 class="service-type">House Cleaning</h2>
+            <p class="provider-name">Provider: Jane Smith</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐ (4.5)</p>
+        </a>
+    
+        <a href="plumbing.html" class="service-item">
+            <h2 class="service-type">Electrician Services</h2>
+            <p class="provider-name">Provider: Mark Lee</p>
+            <p class="ratings">Rating: ⭐⭐⭐⭐⭐ (4.9)</p>
+        </a>
+    </div>
+
+    <a href="/add-post.html" class="add-post-btn">+ Add Post</a>
+
+    <script>
+        function toggleInfo(element) {
+            element.classList.toggle('active');
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>

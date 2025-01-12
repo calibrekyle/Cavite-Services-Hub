@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Provider Verification - Cavite Services Hub</title>
+    <link rel="stylesheet" href="serviceprovider.css">
+</head>
+<body>
+    <div class="verification-container">
+        <div class="verification-header">
+            <h1>Service Provider Verification</h1>
+            <p>Please upload a picture of your Valid ID and a Selfie holding the same ID for verification purposes.</p>
+        </div>
+
+        <div class="example-container">
+            <h2>Example:</h2>
+            <div class="example-images">
+                <div class="example-image">
+                    <img src="Pics/validID.jpg" alt="Valid ID Example">
+                    <p>Valid ID</p>
+                </div>
+                <div class="example-image">
+                    <img src="Pics/selfie.jpg" alt="Selfie with ID Example">
+                    <p>Selfie with ID</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="upload-container">
+            <div class="form-group">
+                <label for="valid-id">Upload Valid ID:</label>
+                <input type="file" id="valid-id" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="selfie-id">Upload Selfie with ID:</label>
+                <input type="file" id="selfie-id" accept="image/*" required>
+            </div>
+            <div class="form-actions">
+                <button onclick="submitVerification()"><a href="SP.html">Submit for Verification</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitVerification() {
+            const validId = document.getElementById('valid-id').files[0];
+            const selfieId = document.getElementById('selfie-id').files[0];
+
+            if (validId && selfieId) {
+                alert('Your verification documents have been submitted successfully!');
+                // Implement file upload to server or further processing here
+            } else {
+                alert('Please upload both your Valid ID and a Selfie with your ID.');
+            }
+        }
+    </script>
+</body>
+</html>

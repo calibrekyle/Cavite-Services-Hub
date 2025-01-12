@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/mnt/data/image.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .profile-header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .profile-picture {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .profile-picture img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ddd;
+        }
+
+        .profile-picture input {
+            display: none;
+        }
+
+        .upload-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 12px;
+            transform: translate(-50%, -50%);
+        }
+
+        .upload-button:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .profile-details {
+            margin-top: 20px;
+        }
+
+        .profile-details h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .profile-details p {
+            margin: 8px 0;
+            font-size: 17px;
+        }
+
+        .edit-button {
+            display: inline-block;
+            margin-top: 20px;
+            background: #28a745;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .edit-button:hover {
+            background: #218838;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            background: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="SP.html">Cavite Services Hub</a></h1>
+            </div>
+
+            <!-- Menu Bar with Dropdown -->
+            <div class="menu-bar">
+                <nav>
+                    <ul>
+                        
+                        <li><a href="#"> Settings</a>
+
+                            <div class="dropdown-content">
+                                <a href="SPprofile.html">Profile</a>
+                                <a href="SPmessages.html">Messages</a>
+                                <a href="index.html">Sell Services</a>
+                                <a href="SPhow-it-works.html">How It Works</a>
+                                <a href="SPabout-us.html">About Us</a>
+                                <a href="login.html">Log out</a>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Welcome, Kenjee</h1>
+            <p>Manage your profile and settings</p>
+        </div>
+        <div class="profile-picture">
+            <img src="Pics/dio.jpg" alt="Profile Picture">
+            <label for="upload-picture" class="upload-button">Upload</label>
+            <input type="file" id="upload-picture" accept="image/*">
+        </div>
+        <div class="profile-details">
+            <h2>Your Details:</h2>
+            <p><strong>Full Name:</strong> Kenjee Angue</p>
+            <p><strong>Email:</strong> kenjeeangue@gmail.com</p>
+            <p><strong>Address:</strong> Lancaster</p>
+            <p><strong>Age:</strong> 22</p>
+            <p><strong>Sex:</strong> Male</p>
+            <p><strong>Barangay:</strong> 4</p>
+        </div>
+        <a href="edit_profile.html" class="edit-button">Edit Information</a>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+   
+
+</body>
+</html>

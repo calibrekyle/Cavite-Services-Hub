@@ -1,0 +1,290 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.status{
+    color: coral;
+}
+
+.menu-bar {
+    position: relative;
+}
+
+.menu-bar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-bar nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+}
+
+.menu-bar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+/* Dropdown menu styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.menu-bar nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search-container input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+.category-container {
+    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+}
+
+.category-container label {
+    font-size: 16px;
+    color: #333;
+}
+
+.category-container select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    margin-left: 10px;
+}
+
+/* Centering checkbox container */
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Adjust this value for spacing between checkboxes */
+    padding: 10px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #f9f9f9; /* Optional: background color */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+/* Styling the checkboxes */
+.checkbox-container label input[type="checkbox"] {
+    width: 20px; /* Increased width */
+    height: 20px; /* Increased height */
+    margin-right: 10px; /* Space between checkbox and label text */
+}
+
+/* Optional: Adding a slight hover effect */
+.checkbox-container label input[type="checkbox"]:hover {
+    cursor: pointer;
+    border: 2px solid #333; /* Darker border on hover */
+}
+
+/* Adjusting the label font size */
+.checkbox-container label {
+    font-size: 18px; /* Adjust font size to match larger checkboxes */
+}
+
+/* Centering price slider container */
+.price-slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 600px;
+    background-color: #f9f9f9; /* Optional: background color */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+.price-slider-container label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.price-slider-container input {
+    width: 100%; /* Make the slider take full width of the container */
+    margin-bottom: 10px;
+}
+
+#priceRangeValue {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Service Listing Styles */
+.service-listing-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center; /* Center items horizontally */
+    align-content: center; /* Center items vertically if needed */
+    text-align: center; /* Center text within each item */
+}
+
+h1{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.service-listing-container a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s;
+    text-align: center; /* Center text within each link block */
+}
+
+.service-listing-container a:hover {
+    transform: scale(1.02);
+}
+
+.date-posted{
+    font-size: 13px;
+    color: #575757;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.service-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.service-item:hover {
+    transform: scale(1.02);
+}
+
+.service-item h2 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.service-item .provider-name,
+.service-item .ratings {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.service-item .more-info {
+    display: none;
+    margin-top: 10px;
+}
+
+.service-item .more-info img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.service-item.active .more-info {
+    display: block;
+}
+
+.add-post-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.add-post-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Cavite Services Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f8fa;
+            color: #333;
+        }
+
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .bookmarked-posts {
+            display: inline-block;
+            background: #e6f843;
+            color: #000000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+
+        .back-to-home:hover, .bookmarked-posts:hover {
+            background: #0d95e8;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .profile-header .profile-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-info img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ddd;
+            margin-right: 15px;
+        }
+
+        .profile-info h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #000000;
+        }
+
+        .profile-info p {
+            color: rgb(160, 159, 159);
+            font-size: 15px;
+        }
+
+        .edit-profile {
+            background: #7ea09a;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .edit-profile:hover {
+            background: #0d95e8;
+        }
+
+        .posts-section {
+            margin-top: 20px;
+        }
+
+        .posts-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .post {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #e1e8ed;
+            position: relative;
+        }
+
+        .post h3,
+        .post p {
+            margin: 0 0 5px;
+        }
+
+        .post .edit-form {
+            display: none;
+        }
+
+        .post .post-actions button {
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .post .edit-button {
+            background-color: #7ea09a;
+        }
+
+        .post .delete-button {
+            background-color: #e64732;
+        }
+
+        .post-actions button:hover {
+            background: #0d95e8;
+        }
+        .post {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #e1e8ed;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .post:hover {
+            transform: scale(1.02);
+        }
+
+        .post:active {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="/">Cavite Services Hub</a></h1>
+            </div>
+
+            <!-- Menu Bar with Dropdown -->
+            <div class="menu-bar">
+                <nav>
+                    <ul>
+                        <li><a href="#"> Settings</a>
+                            <div class="dropdown-content">
+                                <a href="profile.html">Profile</a>
+                                <a href="messages.html">Messages</a>
+                                <a href="serviceprovider.html">Sell Services</a>
+                                <a href="how-it-works.html">How It Works</a>
+                                <a href="about-us.html">About Us</a>
+                                <a href="login.html">Log out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-info">
+                <img src="Pics/dio.jpg" alt="Profile Picture">
+                <h1>Pinsalay Ikinamada
+                    <p>BRGY 4- General Mariano Trias</p>
+                </h1>
+            </div>
+            <a href="profileSettings.html" class="edit-profile">Edit Profile</a>
+        </div>
+        <div>
+            <a href="bookmarked.html" class="bookmarked-posts"> Favorites</a>
+        </div>
+         
+        <div class="posts-section">
+            <h2>Your Posts:</h2>
+            <div class="post">
+                <h3>Looking for Manghihilot</h3>
+                <p>Sobrang sakit po ng likod ko please pahilot</p>
+                <p class="post-time">Posted on: January 11, 2025, 9:00 PM</p>
+                <div class="post-actions">
+                    <button class="edit-button" onclick="editPost(this)">Edit</button>
+                    <button class="delete-button">Delete</button>
+                </div>
+                <form class="edit-form">
+                    <label for="jobType">Job Type:</label>
+                    <input type="text" name="jobType" value="Manghihilot">
+                    <label for="description">Description:</label>
+                    <textarea name="description" rows="2">Sobrang sakit po ng likod ko please pahilot</textarea>
+                    <button type="button" onclick="saveChanges(this)">Save</button>
+                </form>
+            </div>
+            <div class="posts-section">
+                <div class="post">
+                    <h3>Looking for Manikyurista</h3>
+                    <p>May aakitin ako</p>
+                    <p class="post-time">Posted on: January 11, 2025, 9:00 PM</p>
+                    <div class="post-actions">
+                        <button class="edit-button" onclick="editPost(this)">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                    <form class="edit-form">
+                        <label for="jobType">Job Type:</label>
+                        <input type="text" name="jobType" value="Manikyurista">
+                        <label for="description">Description:</label>
+                        <textarea name="description" rows="2">May aakitin ako</textarea>
+                        <button type="button" onclick="saveChanges(this)">Save</button>
+                    </form>
+                </div>
+                <div class="posts-section">
+                    <div class="post">
+                        <h3>Looking for Nag-aayos ng Laptop</h3>
+                        <p>ayaw mag open eh</p>
+                        <p class="post-time">Posted on: January 11, 2025, 9:00 PM</p>
+                        <div class="post-actions">
+                            <button class="edit-button" onclick="editPost(this)">Edit</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                        <form class="edit-form">
+                            <label for="jobType">Job Type:</label>
+                            <input type="text" name="jobType" value="Nag-aayos ng Laptop">
+                            <label for="description">Description:</label>
+                            <textarea name="description" rows="2">ayaw mag open eh</textarea>
+                            <button type="button" onclick="saveChanges(this)">Save</button>
+                        </form>
+                    </div>
+                    <div class="posts-section">
+                        <div class="post">
+                            <h3>Looking for tubero</h3>
+                            <p>magpapatubo sa likod</p>
+                            <p class="post-time">Posted on: January 11, 2025, 9:00 PM</p>
+                            <div class="post-actions">
+                                <button class="edit-button" onclick="editPost(this)">Edit</button>
+                                <button class="delete-button">Delete</button>
+                            </div>
+                            <form class="edit-form">
+                                <label for="jobType">Job Type:</label>
+                                <input type="text" name="jobType" value="tubero">
+                                <label for="description">Description:</label>
+                                <textarea name="description" rows="2">magpapatubo sa likod</textarea>
+                                <button type="button" onclick="saveChanges(this)">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function editPost(button) {
+            const post = button.closest('.post');
+            const form = post.querySelector('.edit-form');
+            form.style.display = 'block';
+                        form.style.display = 'block';
+        }
+
+        function saveChanges(button) {
+            const form = button.closest('.edit-form');
+            const post = form.closest('.post');
+            const jobType = form.querySelector('input[name="jobType"]').value;
+            const description = form.querySelector('textarea[name="description"]').value;
+            
+            post.querySelector('h3').innerText = 'Looking for ' + jobType;
+            post.querySelector('p').innerText = description;
+            form.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

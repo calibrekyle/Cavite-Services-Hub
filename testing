@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Services</title>
+    <link rel="stylesheet" href="plumbing.css">
+</head>
+<body>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo styles */
+.logo h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* Menu Bar Styles */
+.menu-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-bar nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-bar nav ul li {
+    margin: 0 15px;
+}
+
+.menu-bar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.menu-bar nav ul li a:hover {
+    background-color: #555;
+}
+/* Service Details Section */
+.service-detail {
+    max-width: 600px;  /* Set a smaller max width */
+    width: 100%;  /* Make it take up full available space */
+    margin: 80px auto;  /* Center the content and add top margin for header */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Light shadow around the section */
+    border-radius: 8px;  /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content vertically */
+    text-align: center;  /* Center text */
+}
+
+.service-detail h2 {
+    font-size: 2em;
+    color: #333;  /* Dark color for headings */
+    margin-bottom: 20px;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.service-detail p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;  /* Slightly lighter text for better readability */
+    max-width: 500px;  /* Limit paragraph width */
+}
+
+/* Carousel Section */
+.carousel-container {
+    width: 100%;
+    max-width: 400px; /* Limit the width of the carousel */
+    margin: 0 auto;
+    position: relative; /* Enable positioning for child elements */
+    overflow: hidden;
+    display: flex; /* Align items in the center */
+    align-items: center; /* Vertically center the controls and images */
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Carousel Item */
+.carousel-item {
+    min-width: 100%; /* Take up the full width of the carousel */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center images vertically */
+}
+
+/* Images */
+.carousel-item img {
+    max-width: 100%; /* Ensure the image fits within the container width */
+    max-height: 300px; /* Set a maximum height to keep images uniform */
+    object-fit: contain; /* Preserve the image aspect ratio */
+    border-radius: 8px;
+}
+.carousel-item img {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%; /* Vertically center the button */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10; /* Ensure buttons are above images */
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+    left: 10px; /* Position the "previous" button on the left */
+}
+
+.carousel-btn.next {
+    right: 10px; /* Position the "next" button on the right */
+}
+
+/* Book Button */
+.book-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.book-btn {
+    padding: 15px 40px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #218838;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-btn:focus {
+    outline: none;
+}
+
+/* Bookmark Button */
+.bookmark-btn {
+    padding: 15px 40px;
+    background-color: #ffc107; /* Yellow color for bookmarking */
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    display: inline-block;
+    margin-left: 10px; /* Space between buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.bookmark-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bookmark-btn:focus {
+    outline: none;
+}
+
+
+    </style>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="/">Cavite Services Hub</a></h1>
+            </div>
+
+            <!-- Menu Bar -->
+            <div class="menu-bar">
+                <nav>
+                    <ul>
+                        <li><a href="/">Services</a></li>
+                        <li><a href="/how-it-works">How It Works</a></li>
+                        <li><a href="/about-us">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Service Details Section -->
+    <div class="service-detail">
+        <h2>Plumbing Services</h2>
+        <p>Provider: John Doe</p>
+        <p>Rating: ⭐⭐⭐⭐⭐ (4.8)</p>
+        <p>Expert plumbing services for residential and commercial needs. Leak repair, installations, and more.</p>
+
+        <!-- Carousel Section -->
+        <div class="carousel-container">
+            <!-- Previous Button -->
+            <button class="carousel-btn prev" onclick="prevSlide()">&#60;</button>
+            
+            <!-- Carousel Images -->
+            <div class="carousel" id="carousel">
+                <div class="carousel-item">
+                    <img src="Pics/dio.jpg" alt="Plumbing Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="Pics/plumbing.jpg" alt="Plumbing Image 2">
+                </div>
+            </div>
+            
+            <!-- Next Button -->
+            <button class="carousel-btn next" onclick="nextSlide()">&#62;</button>
+        </div>
+
+        <!-- Book Button -->
+        <div class="book-button-container">
+            <a href="/book" class="btn book-btn">MESSAGE JOHN</a>
+            <button class="btn bookmark-btn" onclick="bookmarkService()"><img src="Pics/bookmark.png" alt="bookmark"></button>
+        </div>
+
+        
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            const totalSlides = items.length;
+            const width = carousel.offsetWidth;
+            carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+
+        function prevSlide() {
+            const carousel = document.getElementById('carousel');
+            const totalSlides = document.querySelectorAll('.carousel-item').length;
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            const carousel = document.getElementById('carousel');
+            const totalSlides = document.querySelectorAll('.carousel-item').length;
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        // Adjust carousel on window resize
+        window.addEventListener('resize', updateCarousel);
+
+        function bookmarkService() {
+            alert("This service has been bookmarked!");
+}
+    </script>
+</body>
+</html>
