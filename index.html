@@ -34,7 +34,7 @@
                                 <a href="serviceprovider.html">Sell Services</a>
                                 <a href="how-it-works.html">How It Works</a>
                                 <a href="about-us.html">About Us</a>
-                                <a href="login.html">Log out</a>
+                                <a href="logout.php" >Log out</a>
                             </div>
                             
                         </li>
@@ -208,6 +208,14 @@
         priceRange.addEventListener('input', function() {
             priceRangeValue.textContent = `₱${this.value}`;
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const firstName = localStorage.getItem("user_first_name");
+        if (firstName) {
+            document.getElementById("welcome-message").textContent = `Welcome, ${firstName}!`;
+        }
+    });
+    <h1 id="welcome-message">Welcome!</h1>
     </script>
 </body>
 </html>
